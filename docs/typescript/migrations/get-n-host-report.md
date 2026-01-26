@@ -1,0 +1,53 @@
+# getNHostReport
+
+Description: Generate a detailed report of the data in an NHost project before migrating. This endpoint analyzes the source project and returns information about the resources that can be migrated.
+
+## Parameters
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `resources` | `string[]` | ✅ | List of resources to migrate. |
+| `subdomain` | `string` | ✅ | Source&#039;s Subdomain. |
+| `region` | `string` | ✅ | Source&#039;s Region. |
+| `adminSecret` | `string` | ✅ | Source&#039;s Admin Secret. |
+| `database` | `string` | ✅ | Source&#039;s Database Name. |
+| `username` | `string` | ✅ | Source&#039;s Database Username. |
+| `password` | `string` | ✅ | Source&#039;s Database Password. |
+| `port` | `number` | ❌ | Source&#039;s Database Port. (Default: `5432`) |
+
+## Usage
+
+```typescript
+import { Client, Migrations, Models } from 'appwrite';
+
+const client = new Client()
+    .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
+
+const migrations = new Migrations(client);
+const result: Models.MigrationReport = await migrations.getNHostReport({
+  resources: [],
+  subdomain: '<SUBDOMAIN>',
+  region: '<REGION>',
+  adminSecret: '<ADMIN_SECRET>',
+  database: '<DATABASE>',
+  username: '<USERNAME>',
+  password: '<PASSWORD>',
+  port: 0,
+});
+```
+
+## Response Model
+
+Returns a `Models.MigrationReport` object with the following properties:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| `user` | `number` | Number of users to be migrated. |
+| `team` | `number` | Number of teams to be migrated. |
+| `database` | `number` | Number of databases to be migrated. |
+| `row` | `number` | Number of rows to be migrated. |
+| `file` | `number` | Number of files to be migrated. |
+| `bucket` | `number` | Number of buckets to be migrated. |
+| `function` | `number` | Number of functions to be migrated. |
+| `size` | `number` | Size of files to be migrated in mb. |
+| `version` | `string` | Version of the Appwrite instance to be migrated. |
