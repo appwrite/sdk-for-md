@@ -1,5 +1,7 @@
 # createStringColumn
 
+⚠️ **DEPRECATED** since 1.9.0 - Use `tablesDB.createTextColumn` instead
+
 Description: Create a string column.
 
 ## Parameters

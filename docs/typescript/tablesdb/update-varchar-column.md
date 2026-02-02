@@ -1,8 +1,6 @@
-# updateStringColumn
+# updateVarcharColumn
 
-⚠️ **DEPRECATED** since 1.8.0 - Use `tablesDB.updateTextColumn` instead
-
-Description: Update a string column. Changing the `default` value will not update already existing rows.
+Description: Update a varchar column. Changing the `default` value will not update already existing rows.
 
 ## Parameters
 
@@ -13,7 +11,7 @@ Description: Update a string column. Changing the `default` value will not updat
 | `key` | `string` | ✅ | Column Key. |
 | `required` | `boolean` | ✅ | Is column required? |
 | `default` | `string` | ✅ | Default value for column when not provided. Cannot be set when column is required. |
-| `size` | `number` | ❌ | Maximum size of the string column. |
+| `size` | `number` | ❌ | Maximum size of the varchar column. |
 | `newKey` | `string` | ❌ | New Column Key. |
 
 ## Usage
@@ -25,7 +23,7 @@ const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const tablesDB = new TablesDB(client);
-const result: Models.ColumnString = await tablesDB.updateStringColumn({
+const result: Models.ColumnVarchar = await tablesDB.updateVarcharColumn({
   databaseId: '<DATABASE_ID>',
   tableId: '<TABLE_ID>',
   key: '',
@@ -38,7 +36,7 @@ const result: Models.ColumnString = await tablesDB.updateStringColumn({
 
 ## Response Model
 
-Returns a `Models.ColumnString` object with the following properties:
+Returns a `Models.ColumnVarchar` object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -52,4 +50,3 @@ Returns a `Models.ColumnString` object with the following properties:
 | `updatedAt` | `string` | Column update date in ISO 8601 format. |
 | `size` | `number` | Column size. |
 | `default` | `string` | Default value for column when not provided. Cannot be set when column is required. |
-| `encrypt` | `boolean` | Defines whether this column is encrypted or not. |
