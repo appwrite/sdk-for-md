@@ -10,7 +10,7 @@ Description: Update a collection by its unique ID.
 |-----------|------|----------|-------------|
 | `databaseId` | `string` | ✅ | Database ID. |
 | `collectionId` | `string` | ✅ | Collection ID. |
-| `name` | `string` | ✅ | Collection name. Max length: 128 chars. |
+| `name` | `string` | ❌ | Collection name. Max length: 128 chars. |
 | `permissions` | `string[]` | ❌ | An array of permission strings. By default, the current permissions are inherited. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `documentSecurity` | `boolean` | ❌ | Enables configuring permissions for individual documents. A user needs one of document or collection level permissions to access a document. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `enabled` | `boolean` | ❌ | Is collection enabled? When set to &#039;disabled&#039;, users cannot access the collection but Server SDKs with and API key can still read and write to the collection. No data is lost when this is toggled. (Default: `1`) |

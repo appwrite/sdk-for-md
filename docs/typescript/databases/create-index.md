@@ -14,13 +14,13 @@ Attributes can be `key`, `fulltext`, and `unique`.
 | `key` | `string` | ✅ | Index Key. |
 | `type` | `IndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
 | `attributes` | `string[]` | ✅ | Array of attributes to index. Maximum of 100 attributes are allowed, each 32 characters long. |
-| `orders` | `string[]` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`) |
+| `orders` | `OrderBy` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`)<br>**Allowed:** `asc`, `desc` |
 | `lengths` | `number[]` | ❌ | Length of index. Maximum of 100 (Default: `[]`) |
 
 ## Usage
 
 ```typescript
-import { Client, Databases, IndexType, Models } from 'appwrite';
+import { Client, Databases, IndexType, OrderBy, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -32,7 +32,7 @@ const result: Models.Index = await databases.createIndex({
   key: '',
   type: IndexType.Key,
   attributes: [],
-  orders: [],
+  orders: OrderBy.Asc,
   lengths: [],
 });
 ```

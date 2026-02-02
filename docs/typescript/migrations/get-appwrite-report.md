@@ -6,7 +6,7 @@ Description: Generate a report of the data in an Appwrite project before migrati
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `string[]` | ✅ | List of resources to migrate |
+| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file`, `function`, `deployment`, `environment-variable` |
 | `endpoint` | `string` | ✅ | Source&#039;s Appwrite Endpoint |
 | `projectID` | `string` | ✅ | Source&#039;s Project ID |
 | `key` | `string` | ✅ | Source&#039;s API Key |
@@ -14,14 +14,14 @@ Description: Generate a report of the data in an Appwrite project before migrati
 ## Usage
 
 ```typescript
-import { Client, Migrations, Models } from 'appwrite';
+import { Client, Migrations, Resources, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.MigrationReport = await migrations.getAppwriteReport({
-  resources: [],
+  resources: Resources.User,
   endpoint: 'https://example.com',
   projectID: '<PROJECT_ID>',
   key: '<KEY>',

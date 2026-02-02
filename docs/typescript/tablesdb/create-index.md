@@ -12,13 +12,13 @@ Type can be `key`, `fulltext`, or `unique`.
 | `key` | `string` | ✅ | Index Key. |
 | `type` | `IndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
 | `columns` | `string[]` | ✅ | Array of columns to index. Maximum of 100 columns are allowed, each 32 characters long. |
-| `orders` | `string[]` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`) |
+| `orders` | `OrderBy` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`)<br>**Allowed:** `asc`, `desc` |
 | `lengths` | `number[]` | ❌ | Length of index. Maximum of 100 (Default: `[]`) |
 
 ## Usage
 
 ```typescript
-import { Client, TablesDB, IndexType, Models } from 'appwrite';
+import { Client, TablesDB, IndexType, OrderBy, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -30,7 +30,7 @@ const result: Models.ColumnIndex = await tablesDB.createIndex({
   key: '',
   type: IndexType.Key,
   columns: [],
-  orders: [],
+  orders: OrderBy.Asc,
   lengths: [],
 });
 ```

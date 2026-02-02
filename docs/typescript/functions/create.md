@@ -17,7 +17,7 @@ Description: Create a new function. You can pass a list of [permissions](https:/
 | `logging` | `boolean` | ❌ | When disabled, executions will exclude logs and errors, and will be slightly faster. (Default: `1`) |
 | `entrypoint` | `string` | ❌ | Entrypoint File. This path is relative to the &quot;providerRootDirectory&quot;. |
 | `commands` | `string` | ❌ | Build Commands. |
-| `scopes` | `string[]` | ❌ | List of scopes allowed for API key auto-generated for every execution. Maximum of 100 scopes are allowed. (Default: `[]`) |
+| `scopes` | `Scopes` | ❌ | List of scopes allowed for API key auto-generated for every execution. Maximum of 100 scopes are allowed. (Default: `[]`)<br>**Allowed:** `sessions.write`, `users.read`, `users.write`, `teams.read`, `teams.write`, `databases.read`, `databases.write`, `collections.read`, `collections.write`, `tables.read`, `tables.write`, `attributes.read`, `attributes.write`, `columns.read`, `columns.write`, `indexes.read`, `indexes.write`, `documents.read`, `documents.write`, `rows.read`, `rows.write`, `files.read`, `files.write`, `buckets.read`, `buckets.write`, `functions.read`, `functions.write`, `sites.read`, `sites.write`, `log.read`, `log.write`, `execution.read`, `execution.write`, `locale.read`, `avatars.read`, `health.read`, `providers.read`, `providers.write`, `messages.read`, `messages.write`, `topics.read`, `topics.write`, `subscribers.read`, `subscribers.write`, `targets.read`, `targets.write`, `rules.read`, `rules.write`, `migrations.read`, `migrations.write`, `vcs.read`, `vcs.write`, `assistant.read`, `tokens.read`, `tokens.write` |
 | `installationId` | `string` | ❌ | Appwrite Installation ID for VCS (Version Control System) deployment. |
 | `providerRepositoryId` | `string` | ❌ | Repository ID of the repo linked to the function. |
 | `providerBranch` | `string` | ❌ | Production branch for the repo linked to the function. |
@@ -28,7 +28,7 @@ Description: Create a new function. You can pass a list of [permissions](https:/
 ## Usage
 
 ```typescript
-import { Client, Functions, Runtime, Models } from 'appwrite';
+import { Client, Functions, Runtime, Scopes, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -46,7 +46,7 @@ const result: Models.Function = await functions.create({
   logging: false,
   entrypoint: '<ENTRYPOINT>',
   commands: '<COMMANDS>',
-  scopes: [],
+  scopes: Scopes.SessionsWrite,
   installationId: '<INSTALLATION_ID>',
   providerRepositoryId: '<PROVIDER_REPOSITORY_ID>',
   providerBranch: '<PROVIDER_BRANCH>',

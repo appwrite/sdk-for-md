@@ -13,7 +13,7 @@ Please note that to avoid a [Redirect Attack](https://github.com/OWASP/CheatShee
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `teamId` | `string` | ✅ | Team ID. |
-| `roles` | `string[]` | ✅ | Array of strings. Use this param to set the user roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 32 characters long. |
+| `roles` | `Roles` | ✅ | Array of strings. Use this param to set the user roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 32 characters long.<br>**Allowed:** `admin`, `developer`, `owner` |
 | `email` | `string` | ❌ | Email of the new team member. |
 | `userId` | `string` | ❌ | ID of the user to be added to a team. |
 | `phone` | `string` | ❌ | Phone number. Format this number with a leading &#039;+&#039; and a country code, e.g., +16175551212. |
@@ -23,7 +23,7 @@ Please note that to avoid a [Redirect Attack](https://github.com/OWASP/CheatShee
 ## Usage
 
 ```typescript
-import { Client, Teams, Models } from 'appwrite';
+import { Client, Teams, Roles, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -31,7 +31,7 @@ const client = new Client()
 const teams = new Teams(client);
 const result: Models.Membership = await teams.createMembership({
   teamId: '<TEAM_ID>',
-  roles: [],
+  roles: Roles.Admin,
   email: 'email@example.com',
   userId: '<USER_ID>',
   phone: '+12065550100',

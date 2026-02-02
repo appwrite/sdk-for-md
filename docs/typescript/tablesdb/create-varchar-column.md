@@ -1,8 +1,6 @@
-# updateStringColumn
+# createVarcharColumn
 
-⚠️ **DEPRECATED** since 1.8.0 - Use `tablesDB.updateTextColumn` instead
-
-Description: Update a string column. Changing the `default` value will not update already existing rows.
+Description: Create a varchar column.
 
 ## Parameters
 
@@ -11,10 +9,10 @@ Description: Update a string column. Changing the `default` value will not updat
 | `databaseId` | `string` | ✅ | Database ID. |
 | `tableId` | `string` | ✅ | Table ID. You can create a new table using the Database service [server integration](https://appwrite.io/docs/references/cloud/server-dart/tablesDB#createTable). |
 | `key` | `string` | ✅ | Column Key. |
+| `size` | `number` | ✅ | Column size for varchar columns, in number of characters. Maximum size is 16381. |
 | `required` | `boolean` | ✅ | Is column required? |
-| `default` | `string` | ✅ | Default value for column when not provided. Cannot be set when column is required. |
-| `size` | `number` | ❌ | Maximum size of the string column. |
-| `newKey` | `string` | ❌ | New Column Key. |
+| `default` | `string` | ❌ | Default value for column when not provided. Cannot be set when column is required. |
+| `array` | `boolean` | ❌ | Is column an array? |
 
 ## Usage
 
@@ -25,20 +23,20 @@ const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const tablesDB = new TablesDB(client);
-const result: Models.ColumnString = await tablesDB.updateStringColumn({
+const result: Models.ColumnVarchar = await tablesDB.createVarcharColumn({
   databaseId: '<DATABASE_ID>',
   tableId: '<TABLE_ID>',
   key: '',
+  size: 1,
   required: false,
   default: '<DEFAULT>',
-  size: 1,
-  newKey: '',
+  array: false,
 });
 ```
 
 ## Response Model
 
-Returns a `Models.ColumnString` object with the following properties:
+Returns a `Models.ColumnVarchar` object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
@@ -52,4 +50,3 @@ Returns a `Models.ColumnString` object with the following properties:
 | `updatedAt` | `string` | Column update date in ISO 8601 format. |
 | `size` | `number` | Column size. |
 | `default` | `string` | Default value for column when not provided. Cannot be set when column is required. |
-| `encrypt` | `boolean` | Defines whether this column is encrypted or not. |

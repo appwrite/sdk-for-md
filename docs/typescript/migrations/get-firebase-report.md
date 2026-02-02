@@ -6,20 +6,20 @@ Description: Generate a report of the data in a Firebase project before migratin
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `string[]` | ✅ | List of resources to migrate |
+| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `serviceAccount` | `string` | ✅ | JSON of the Firebase service account credentials |
 
 ## Usage
 
 ```typescript
-import { Client, Migrations, Models } from 'appwrite';
+import { Client, Migrations, Resources, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.MigrationReport = await migrations.getFirebaseReport({
-  resources: [],
+  resources: Resources.User,
   serviceAccount: '<SERVICE_ACCOUNT>',
 });
 ```

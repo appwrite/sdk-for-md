@@ -9,13 +9,13 @@ Description: Update a key by its unique ID. Use this endpoint to update the name
 | `projectId` | `string` | ✅ | Project unique ID. |
 | `keyId` | `string` | ✅ | Key unique ID. |
 | `name` | `string` | ✅ | Key name. Max length: 128 chars. |
-| `scopes` | `string[]` | ✅ | Key scopes list. Maximum of 100 events are allowed. |
+| `scopes` | `Scopes` | ✅ | Key scopes list. Maximum of 100 events are allowed.<br>**Allowed:** `sessions.write`, `users.read`, `users.write`, `teams.read`, `teams.write`, `databases.read`, `databases.write`, `collections.read`, `collections.write`, `tables.read`, `tables.write`, `attributes.read`, `attributes.write`, `columns.read`, `columns.write`, `indexes.read`, `indexes.write`, `documents.read`, `documents.write`, `rows.read`, `rows.write`, `files.read`, `files.write`, `buckets.read`, `buckets.write`, `functions.read`, `functions.write`, `sites.read`, `sites.write`, `log.read`, `log.write`, `execution.read`, `execution.write`, `locale.read`, `avatars.read`, `health.read`, `providers.read`, `providers.write`, `messages.read`, `messages.write`, `topics.read`, `topics.write`, `subscribers.read`, `subscribers.write`, `targets.read`, `targets.write`, `rules.read`, `rules.write`, `migrations.read`, `migrations.write`, `vcs.read`, `vcs.write`, `assistant.read`, `tokens.read`, `tokens.write` |
 | `expire` | `string` | ❌ | Expiration time in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Use null for unlimited expiration. |
 
 ## Usage
 
 ```typescript
-import { Client, Projects, Models } from 'appwrite';
+import { Client, Projects, Scopes, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -25,7 +25,7 @@ const result: Models.Key = await projects.updateKey({
   projectId: '<PROJECT_ID>',
   keyId: '<KEY_ID>',
   name: '<NAME>',
-  scopes: [],
+  scopes: Scopes.SessionsWrite,
   expire: '',
 });
 ```
