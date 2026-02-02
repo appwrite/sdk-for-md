@@ -9,7 +9,7 @@ Description: Update a database by its unique ID.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `databaseId` | `string` | ✅ | Database ID. |
-| `name` | `string` | ✅ | Database name. Max length: 128 chars. |
+| `name` | `string` | ❌ | Database name. Max length: 128 chars. |
 | `enabled` | `boolean` | ❌ | Is database enabled? When set to &#039;disabled&#039;, users cannot access the database but Server SDKs with an API key can still read and write to the database. No data is lost when this is toggled. (Default: `1`) |
 
 ## Usage

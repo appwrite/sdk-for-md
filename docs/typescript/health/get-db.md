@@ -15,15 +15,14 @@ const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const health = new Health(client);
-const result: Models.HealthStatus = await health.getDB();
+const result: Models.HealthStatusList = await health.getDB();
 ```
 
 ## Response Model
 
-Returns a `Models.HealthStatus` object with the following properties:
+Returns a `Models.HealthStatusList` object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `name` | `string` | Name of the service. |
-| `ping` | `number` | Duration in milliseconds how long the health check took. |
-| `status` | `HealthCheckStatus` | Service status. Possible values are: `pass`, `fail` |
+| `total` | `number` | Total number of statuses that matched your query. |
+| `statuses` | `object[]` | List of statuses. |

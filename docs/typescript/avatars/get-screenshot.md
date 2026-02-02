@@ -24,7 +24,7 @@ When width and height are specified, the image is resized accordingly. If both d
 | `longitude` | `number` | ❌ | Geolocation longitude. Pass a number between -180 to 180. Defaults to 0. |
 | `accuracy` | `number` | ❌ | Geolocation accuracy in meters. Pass a number between 0 to 100000. Defaults to 0. |
 | `touch` | `boolean` | ❌ | Enable touch support. Pass 0 for no touch, or 1 for touch enabled. Defaults to 0. |
-| `permissions` | `string[]` | ❌ | Browser permissions to grant. Pass an array of permission names like [&quot;geolocation&quot;, &quot;camera&quot;, &quot;microphone&quot;]. Defaults to empty. (Default: `[]`) |
+| `permissions` | `BrowserPermission` | ❌ | Browser permissions to grant. Pass an array of permission names like [&quot;geolocation&quot;, &quot;camera&quot;, &quot;microphone&quot;]. Defaults to empty. (Default: `[]`)<br>**Allowed:** `geolocation`, `camera`, `microphone`, `notifications`, `midi`, `push`, `clipboard-read`, `clipboard-write`, `payment-handler`, `usb`, `bluetooth`, `accelerometer`, `gyroscope`, `magnetometer`, `ambient-light-sensor`, `background-sync`, `persistent-storage`, `screen-wake-lock`, `web-share`, `xr-spatial-tracking` |
 | `sleep` | `number` | ❌ | Wait time in seconds before taking the screenshot. Pass an integer between 0 to 10. Defaults to 0. |
 | `width` | `number` | ❌ | Output image width. Pass 0 to use original width, or an integer between 1 to 2000. Defaults to 0 (original width). |
 | `height` | `number` | ❌ | Output image height. Pass 0 to use original height, or an integer between 1 to 2000. Defaults to 0 (original height). |
@@ -34,7 +34,7 @@ When width and height are specified, the image is resized accordingly. If both d
 ## Usage
 
 ```typescript
-import { Client, Avatars, Theme, Timezone, ImageFormat } from 'appwrite';
+import { Client, Avatars, Theme, Timezone, BrowserPermission, ImageFormat } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -58,7 +58,7 @@ const result = avatars.getScreenshot({
   longitude: -122.4194,
   accuracy: 100,
   touch: true,
-  permissions: ["geolocation","notifications"],
+  permissions: BrowserPermission.Geolocation,
   sleep: 3,
   width: 800,
   height: 600,

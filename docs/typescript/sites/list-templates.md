@@ -6,23 +6,23 @@ Description: List available site templates. You can use template details in [cre
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `frameworks` | `string[]` | ❌ | List of frameworks allowed for filtering site templates. Maximum of 100 frameworks are allowed. (Default: `[]`) |
-| `useCases` | `string[]` | ❌ | List of use cases allowed for filtering site templates. Maximum of 100 use cases are allowed. (Default: `[]`) |
+| `frameworks` | `Frameworks` | ❌ | List of frameworks allowed for filtering site templates. Maximum of 100 frameworks are allowed. (Default: `[]`)<br>**Allowed:** `analog`, `angular`, `nextjs`, `react`, `nuxt`, `vue`, `sveltekit`, `astro`, `tanstack-start`, `remix`, `lynx`, `flutter`, `react-native`, `vite`, `other` |
+| `useCases` | `UseCases` | ❌ | List of use cases allowed for filtering site templates. Maximum of 100 use cases are allowed. (Default: `[]`)<br>**Allowed:** `dev-tools`, `starter`, `databases`, `ai`, `messaging`, `utilities` |
 | `limit` | `number` | ❌ | Limit the number of templates returned in the response. Default limit is 25, and maximum limit is 5000. (Default: `25`) |
 | `offset` | `number` | ❌ | Offset the list of returned templates. Maximum offset is 5000. |
 
 ## Usage
 
 ```typescript
-import { Client, Sites, Models } from 'appwrite';
+import { Client, Sites, Frameworks, UseCases, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const sites = new Sites(client);
 const result: Models.TemplateSiteList = await sites.listTemplates({
-  frameworks: [],
-  useCases: [],
+  frameworks: Frameworks.Analog,
+  useCases: UseCases.DevTools,
   limit: 1,
   offset: 0,
 });

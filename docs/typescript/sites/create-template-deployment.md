@@ -56,7 +56,7 @@ Returns a `Models.Deployment` object with the following properties:
 | `activate` | `boolean` | Whether the deployment should be automatically activated. |
 | `screenshotLight` | `string` | Screenshot with light theme preference file ID. |
 | `screenshotDark` | `string` | Screenshot with dark theme preference file ID. |
-| `status` | `DeploymentStatus` | The deployment status. Possible values are &quot;waiting&quot;, &quot;processing&quot;, &quot;building&quot;, &quot;ready&quot;, and &quot;failed&quot;. |
+| `status` | `DeploymentStatus` | The deployment status. Possible values are &quot;waiting&quot;, &quot;processing&quot;, &quot;building&quot;, &quot;ready&quot;, &quot;canceled&quot; and &quot;failed&quot;. |
 | `buildLogs` | `string` | The build logs. |
 | `buildDuration` | `number` | The current build time in seconds. |
 | `providerRepositoryName` | `string` | The name of the vcs provider repository |

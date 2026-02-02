@@ -6,7 +6,7 @@ Description: Generate a detailed report of the data in an NHost project before m
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `string[]` | ✅ | List of resources to migrate. |
+| `resources` | `Resources` | ✅ | List of resources to migrate.<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `subdomain` | `string` | ✅ | Source&#039;s Subdomain. |
 | `region` | `string` | ✅ | Source&#039;s Region. |
 | `adminSecret` | `string` | ✅ | Source&#039;s Admin Secret. |
@@ -18,14 +18,14 @@ Description: Generate a detailed report of the data in an NHost project before m
 ## Usage
 
 ```typescript
-import { Client, Migrations, Models } from 'appwrite';
+import { Client, Migrations, Resources, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.MigrationReport = await migrations.getNHostReport({
-  resources: [],
+  resources: Resources.User,
   subdomain: '<SUBDOMAIN>',
   region: '<REGION>',
   adminSecret: '<ADMIN_SECRET>',
