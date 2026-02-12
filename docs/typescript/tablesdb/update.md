@@ -38,3 +38,5 @@ Returns a `Models.Database` object with the following properties:
 | `updatedAt` | `string` | Database update date in ISO 8601 format. |
 | `enabled` | `boolean` | If database is enabled. Can be &#039;enabled&#039; or &#039;disabled&#039;. When disabled, the database is inaccessible to users, but remains accessible to Server SDKs using API keys. |
 | `type` | `DatabaseType` | Database type. |
+| `policies` | `object[]` | Database backup policies. |
+| `archives` | `object[]` | Database backup archives. |

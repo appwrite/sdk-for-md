@@ -45,8 +45,8 @@ Returns a `Models.UsageProject` object with the following properties:
 | `bucketsTotal` | `number` | Total aggregated number of buckets. |
 | `executionsMbSecondsTotal` | `number` | Total aggregated number of function executions mbSeconds. |
 | `buildsMbSecondsTotal` | `number` | Total aggregated number of function builds mbSeconds. |
-| `databasesReadsTotal` | `number` | Total number of databases reads. |
-| `databasesWritesTotal` | `number` | Total number of databases writes. |
+| `databasesReadsTotal` | `number` | Aggregated stats for total databases reads. |
+| `databasesWritesTotal` | `number` | Aggregated stats for total databases writes. |
 | `requests` | `object[]` | Aggregated  number of requests per period. |
 | `network` | `object[]` | Aggregated number of consumed bandwidth per period. |
 | `users` | `object[]` | Aggregated number of users per period. |
@@ -57,10 +57,16 @@ Returns a `Models.UsageProject` object with the following properties:
 | `executionsMbSecondsBreakdown` | `object[]` | Aggregated breakdown in totals of execution mbSeconds by functions. |
 | `buildsMbSecondsBreakdown` | `object[]` | Aggregated breakdown in totals of build mbSeconds by functions. |
 | `functionsStorageBreakdown` | `object[]` | Aggregated breakdown in totals of functions storage size (in bytes). |
-| `authPhoneTotal` | `number` | Total aggregated number of phone auth. |
-| `authPhoneEstimate` | `number` | Estimated total aggregated cost of phone auth. |
+| `authPhoneTotal` | `number` | Aggregated stats for total auth phone. |
+| `authPhoneEstimate` | `number` | Aggregated stats for total auth phone estimation. |
 | `authPhoneCountryBreakdown` | `object[]` | Aggregated breakdown in totals of phone auth by country. |
-| `databasesReads` | `object[]` | An array of aggregated number of database reads. |
-| `databasesWrites` | `object[]` | An array of aggregated number of database writes. |
+| `databasesReads` | `object[]` | Aggregated stats for database reads. |
+| `databasesWrites` | `object[]` | Aggregated stats for database writes. |
 | `imageTransformations` | `object[]` | An array of aggregated number of image transformations. |
 | `imageTransformationsTotal` | `number` | Total aggregated number of image transformations. |
+| `networkTotal` | `number` | Aggregated stats for total network bandwidth. |
+| `backupsStorageTotal` | `number` | Aggregated stats for total backups storage. |
+| `screenshotsGenerated` | `object[]` | An array of aggregated number of screenshots generated. |
+| `screenshotsGeneratedTotal` | `number` | Total aggregated number of screenshots generated. |
+| `imagineCredits` | `object[]` | An array of aggregated number of Imagine credits in the given period. |
+| `imagineCreditsTotal` | `number` | Total aggregated number of Imagine credits. |

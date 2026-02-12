@@ -109,3 +109,7 @@ Returns a `Models.Project` object with the following properties:
 | `serviceStatusForFunctions` | `boolean` | Functions service status |
 | `serviceStatusForGraphql` | `boolean` | GraphQL service status |
 | `serviceStatusForMessaging` | `boolean` | Messaging service status |
+| `region` | `string` | Project region |
+| `status` | `string` | Project status |
+| `billingLimits` | `object` | Billing limits reached |
+| `blocks` | `object[]` | Project blocks information |

@@ -9,7 +9,7 @@ Description: Create a new project. You can create a maximum of 100 projects per 
 | `projectId` | `string` | ✅ | Unique Id. Choose a custom ID or generate a random ID with `ID.unique()`. Valid chars are a-z, and hyphen. Can&#039;t start with a special char. Max length is 36 chars. |
 | `name` | `string` | ✅ | Project name. Max length: 128 chars. |
 | `teamId` | `string` | ✅ | Team unique ID. |
-| `region` | `Region` | ❌ | Project Region. (Default: `default`)<br>**Allowed:** `default` |
+| `region` | `Region` | ❌ | Project Region. (Default: `fra`)<br>**Allowed:** `fra`, `nyc`, `syd`, `sfo`, `sgp`, `tor` |
 | `description` | `string` | ❌ | Project description. Max length: 256 chars. |
 | `logo` | `string` | ❌ | Project logo. |
 | `url` | `string` | ❌ | Project URL. |
@@ -33,7 +33,7 @@ const result: Models.Project = await projects.create({
   projectId: '',
   name: '<NAME>',
   teamId: '<TEAM_ID>',
-  region: Region.Default,
+  region: Region.Fra,
   description: '<DESCRIPTION>',
   logo: '<LOGO>',
   url: 'https://example.com',
@@ -115,3 +115,7 @@ Returns a `Models.Project` object with the following properties:
 | `serviceStatusForFunctions` | `boolean` | Functions service status |
 | `serviceStatusForGraphql` | `boolean` | GraphQL service status |
 | `serviceStatusForMessaging` | `boolean` | Messaging service status |
+| `region` | `string` | Project region |
+| `status` | `string` | Project status |
+| `billingLimits` | `object` | Billing limits reached |
+| `blocks` | `object[]` | Project blocks information |
