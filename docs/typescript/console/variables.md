@@ -35,7 +35,7 @@ Returns a `Models.ConsoleVariables` object with the following properties:
 | `aPPVCSENABLED` | `boolean` | Defines if VCS (Version Control System) is enabled. |
 | `aPPDOMAINENABLED` | `boolean` | Defines if main domain is configured. If so, custom domains can be created. |
 | `aPPASSISTANTENABLED` | `boolean` | Defines if AI assistant is enabled. |
-| `aPPDOMAINSITES` | `string` | A domain to use for site URLs. |
+| `aPPDOMAINSITES` | `string` | A comma separated list of domains to use for site URLs. |
 | `aPPDOMAINFUNCTIONS` | `string` | A domain to use for function URLs. |
 | `aPPOPTIONSFORCEHTTPS` | `string` | Defines if HTTPS is enforced for all requests. |
 | `aPPDOMAINSNAMESERVERS` | `string` | Comma-separated list of nameservers. |

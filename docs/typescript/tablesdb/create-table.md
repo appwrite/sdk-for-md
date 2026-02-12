@@ -52,3 +52,5 @@ Returns a `Models.Table` object with the following properties:
 | `rowSecurity` | `boolean` | Whether row-level permissions are enabled. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `columns` | `any[]` | Table columns. |
 | `indexes` | `object[]` | Table indexes. |
+| `bytesMax` | `number` | Maximum row size in bytes. Returns 0 when no limit applies. |
+| `bytesUsed` | `number` | Currently used row size in bytes based on defined columns. |

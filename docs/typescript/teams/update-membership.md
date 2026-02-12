@@ -8,12 +8,12 @@ Description: Modify the roles of a team member. Only team members with the owner
 |-----------|------|----------|-------------|
 | `teamId` | `string` | ✅ | Team ID. |
 | `membershipId` | `string` | ✅ | Membership ID. |
-| `roles` | `Roles` | ✅ | An array of strings. Use this param to set the user&#039;s roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 32 characters long.<br>**Allowed:** `admin`, `developer`, `owner` |
+| `roles` | `string[]` | ✅ | An array of strings. Use this param to set the user&#039;s roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 32 characters long. |
 
 ## Usage
 
 ```typescript
-import { Client, Teams, Roles, Models } from 'appwrite';
+import { Client, Teams, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -22,7 +22,7 @@ const teams = new Teams(client);
 const result: Models.Membership = await teams.updateMembership({
   teamId: '<TEAM_ID>',
   membershipId: '<MEMBERSHIP_ID>',
-  roles: Roles.Admin,
+  roles: [],
 });
 ```
 
