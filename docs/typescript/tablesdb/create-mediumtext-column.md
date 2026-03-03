@@ -12,6 +12,7 @@ Description: Create a mediumtext column.
 | `required` | `boolean` | ✅ | Is column required? |
 | `default` | `string` | ❌ | Default value for column when not provided. Cannot be set when column is required. |
 | `array` | `boolean` | ❌ | Is column an array? |
+| `encrypt` | `boolean` | ❌ | Toggle encryption for the column. Encryption enhances security by not storing any plain text values in the database. However, encrypted columns cannot be queried. |
 
 ## Usage
 
@@ -29,6 +30,7 @@ const result: Models.ColumnMediumtext = await tablesDB.createMediumtextColumn({
   required: false,
   default: '<DEFAULT>',
   array: false,
+  encrypt: false,
 });
 ```
 
@@ -47,3 +49,4 @@ Returns a `Models.ColumnMediumtext` object with the following properties:
 | `createdAt` | `string` | Column creation date in ISO 8601 format. |
 | `updatedAt` | `string` | Column update date in ISO 8601 format. |
 | `default` | `string` | Default value for column when not provided. Cannot be set when column is required. |
+| `encrypt` | `boolean` | Defines whether this column is encrypted or not. |

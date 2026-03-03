@@ -9,7 +9,7 @@ Description: Update a key by its unique ID. Use this endpoint to update the name
 | `organizationId` | `string` | ✅ | Organization Unique ID |
 | `keyId` | `string` | ✅ | Key unique ID. |
 | `name` | `string` | ✅ | Key name. Max length: 128 chars. |
-| `scopes` | `Scopes` | ✅ | Key scopes list. Maximum of 100 scopes are allowed.<br>**Allowed:** `platforms.read`, `platforms.write`, `projects.read`, `projects.write`, `keys.read`, `keys.write`, `devKeys.read`, `devKeys.write`, `webhooks.read`, `webhooks.write` |
+| `scopes` | `Scopes` | ✅ | Key scopes list. Maximum of 100 scopes are allowed.<br>**Allowed:** `platforms.read`, `platforms.write`, `projects.read`, `projects.write`, `keys.read`, `keys.write`, `devKeys.read`, `devKeys.write`, `webhooks.read`, `webhooks.write`, `domains.read`, `domains.write` |
 | `expire` | `string` | ❌ | Expiration time in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Use null for unlimited expiration. |
 
 ## Usage

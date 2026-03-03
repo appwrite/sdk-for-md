@@ -41,7 +41,7 @@ Returns a `Models.Row` object with the following properties:
 | Property | Type | Description |
 |----------|------|-------------|
 | `id` | `string` | Row ID. |
-| `sequence` | `number` | Row automatically incrementing ID. |
+| `sequence` | `number` | Row sequence ID. |
 | `tableId` | `string` | Table ID. |
 | `databaseId` | `string` | Database ID. |
 | `createdAt` | `string` | Row creation date in ISO 8601 format. |

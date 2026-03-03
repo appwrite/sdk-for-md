@@ -6,7 +6,7 @@ Description: Migrate data from an NHost project to your Appwrite project. This e
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
+| `resources` | `NHostMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `subdomain` | `string` | ✅ | Source&#039;s Subdomain |
 | `region` | `string` | ✅ | Source&#039;s Region |
 | `adminSecret` | `string` | ✅ | Source&#039;s Admin Secret |
@@ -18,14 +18,14 @@ Description: Migrate data from an NHost project to your Appwrite project. This e
 ## Usage
 
 ```typescript
-import { Client, Migrations, Resources, Models } from 'appwrite';
+import { Client, Migrations, NHostMigrationResource, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.Migration = await migrations.createNHostMigration({
-  resources: Resources.User,
+  resources: NHostMigrationResource.User,
   subdomain: '<SUBDOMAIN>',
   region: '<REGION>',
   adminSecret: '<ADMIN_SECRET>',

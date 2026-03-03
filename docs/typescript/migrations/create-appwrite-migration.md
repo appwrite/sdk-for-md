@@ -6,7 +6,7 @@ Description: Migrate data from another Appwrite project to your current project.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file`, `function`, `deployment`, `environment-variable` |
+| `resources` | `AppwriteMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file`, `function`, `deployment`, `environment-variable`, `site`, `site-deployment`, `site-variable` |
 | `endpoint` | `string` | ✅ | Source Appwrite endpoint |
 | `projectId` | `string` | ✅ | Source Project ID |
 | `apiKey` | `string` | ✅ | Source API Key |
@@ -14,14 +14,14 @@ Description: Migrate data from another Appwrite project to your current project.
 ## Usage
 
 ```typescript
-import { Client, Migrations, Resources, Models } from 'appwrite';
+import { Client, Migrations, AppwriteMigrationResource, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.Migration = await migrations.createAppwriteMigration({
-  resources: Resources.User,
+  resources: AppwriteMigrationResource.User,
   endpoint: 'https://example.com',
   projectId: '<PROJECT_ID>',
   apiKey: '<API_KEY>',

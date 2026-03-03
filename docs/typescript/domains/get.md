@@ -33,10 +33,12 @@ Returns a `Models.Domain` object with the following properties:
 | `updatedAt` | `string` | Domain update date in ISO 8601 format. |
 | `domain` | `string` | Domain name. |
 | `registrar` | `string` | Domain registrar (e.g. &quot;appwrite&quot; or &quot;third_party&quot;). |
+| `paymentStatus` | `string` | Payment status for domain purchase. |
 | `nameservers` | `string` | Nameservers setting. &quot;Appwrite&quot; or empty string. |
 | `expire` | `string` | Domain expiry date in ISO 8601 format. |
 | `renewal` | `string` | Domain renewal date in ISO 8601 format. |
 | `autoRenewal` | `boolean` | If set to true, the domain will automatically renew. |
-| `renewalPrice` | `number` | Renewal price (in USD). |
+| `renewalPrice` | `number` | Renewal price (in cents). |
 | `teamId` | `string` | Team ID. |
 | `dnsRecords` | `object[]` | Dns records |
+| `transferStatus` | `string` | Domain transfer status (e.g., &quot;pending&quot;, &quot;completed&quot;, &quot;failed&quot;). |

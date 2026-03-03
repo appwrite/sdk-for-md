@@ -7,6 +7,7 @@ Description: Get Scopes
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `organizationId` | `string` | ✅ | Organization id |
+| `projectId` | `string` | ❌ | Project id |
 
 ## Usage
 
@@ -19,6 +20,7 @@ const client = new Client()
 const organizations = new Organizations(client);
 const result: Models.Roles = await organizations.getScopes({
   organizationId: '<ORGANIZATION_ID>',
+  projectId: '<PROJECT_ID>',
 });
 ```
 

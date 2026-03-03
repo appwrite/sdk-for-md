@@ -43,7 +43,7 @@ Returns a `Models.Document` object with the following properties:
 | Property | Type | Description |
 |----------|------|-------------|
 | `id` | `string` | Document ID. |
-| `sequence` | `number` | Document automatically incrementing ID. |
+| `sequence` | `number` | Document sequence ID. |
 | `collectionId` | `string` | Collection ID. |
 | `databaseId` | `string` | Database ID. |
 | `createdAt` | `string` | Document creation date in ISO 8601 format. |

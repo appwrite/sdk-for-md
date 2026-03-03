@@ -13,6 +13,7 @@ Description: Get a list of all the user&#039;s documents in a given collection. 
 | `queries` | `string[]` | ❌ | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/queries). Maximum of 100 queries are allowed, each 4096 characters long. (Default: `[]`) |
 | `transactionId` | `string` | ❌ | Transaction ID to read uncommitted changes within the transaction. |
 | `total` | `boolean` | ❌ | When set to false, the total count returned will be 0 and will not be calculated. (Default: `1`) |
+| `ttl` | `number` | ❌ | TTL (seconds) for cached responses when caching is enabled for select queries. Must be between 0 and 86400 (24 hours). |
 
 ## Usage
 
@@ -29,6 +30,7 @@ const result: Models.DocumentList = await databases.listDocuments({
   queries: [],
   transactionId: '<TRANSACTION_ID>',
   total: false,
+  ttl: 0,
 });
 ```
 

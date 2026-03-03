@@ -61,6 +61,7 @@ Returns a `Models.BillingPlan` object with the following properties:
 | `authPhone` | `number` | SMS authentications per month |
 | `domains` | `number` | Custom domains |
 | `logs` | `number` | Log days |
+| `projectInactivityDays` | `number` | Number of days of console inactivity before a project is paused. 0 means pausing is disabled. |
 | `alertLimit` | `number` | Alert threshold percentage |
 | `usage` | `object` | Additional resources |
 | `addons` | `object` | Addons |

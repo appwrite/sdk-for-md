@@ -37,3 +37,4 @@ Returns a `Models.DomainPrice` object with the following properties:
 | `available` | `boolean` | Whether the domain is currently available for registration. |
 | `price` | `number` | Domain registration price. |
 | `periodYears` | `number` | Price period in years. |
+| `premium` | `boolean` | Whether the domain is a premium domain. |

@@ -47,3 +47,4 @@ Returns a `Models.ColumnText` object with the following properties:
 | `createdAt` | `string` | Column creation date in ISO 8601 format. |
 | `updatedAt` | `string` | Column update date in ISO 8601 format. |
 | `default` | `string` | Default value for column when not provided. Cannot be set when column is required. |
+| `encrypt` | `boolean` | Defines whether this column is encrypted or not. |

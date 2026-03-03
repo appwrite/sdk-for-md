@@ -13,7 +13,7 @@ Please note that to avoid a [Redirect Attack](https://github.com/OWASP/CheatShee
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `teamId` | `string` | ✅ | Team ID. |
-| `roles` | `string[]` | ✅ | Array of strings. Use this param to set the user roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 32 characters long. |
+| `roles` | `string[]` | ✅ | Array of strings. Use this param to set the user roles in the team. A role can be any string. Learn more about [roles and permissions](https://appwrite.io/docs/permissions). Maximum of 100 roles are allowed, each 81 characters long. |
 | `email` | `string` | ❌ | Email of the new team member. |
 | `userId` | `string` | ❌ | ID of the user to be added to a team. |
 | `phone` | `string` | ❌ | Phone number. Format this number with a leading &#039;+&#039; and a country code, e.g., +16175551212. |
