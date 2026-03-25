@@ -6,7 +6,7 @@ Description: List all invoices tied to an account.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `queries` | `string[]` | ❌ | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/databases#querying-documents). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: teamId, aggregationId, amount, currency, from, to, dueAt, attempts, status, grossAmount (Default: `[]`) |
+| `queries` | `string[]` | ❌ | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/databases#querying-documents). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: teamId, aggregationId, type, amount, currency, from, to, dueAt, attempts, status, grossAmount (Default: `[]`) |
 
 ## Usage
 

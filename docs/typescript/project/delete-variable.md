@@ -1,12 +1,12 @@
 # deleteVariable
 
-Description: Delete a project variable by its unique ID.
+Description: Delete a variable by its unique ID.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `variableId` | `string` | ✅ | Variable unique ID. |
+| `variableId` | `string` | ✅ | Variable ID. |
 
 ## Usage
 

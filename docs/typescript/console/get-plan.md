@@ -56,6 +56,7 @@ Returns a `Models.BillingPlan` object with the following properties:
 | `executionsRetentionCount` | `number` | Rolling max executions retained per function/site |
 | `gBHours` | `number` | GB hours for functions |
 | `realtime` | `number` | Realtime connections |
+| `realtimeMessages` | `number` | Realtime messages |
 | `messages` | `number` | Messages per month |
 | `topics` | `number` | Topics for messaging |
 | `authPhone` | `number` | SMS authentications per month |

@@ -1,6 +1,6 @@
 # getTransferStatus
 
-Description: Get the transfer status for a domain.
+Description: Retrieve the current transfer status for a domain. Returns the status, an optional reason, and a timestamp of the last status change.
 
 ## Parameters
 
@@ -28,6 +28,6 @@ Returns a `Models.DomainTransferStatus` object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `status` | `DomainTransferStatusStatus` | Transfer status. |
+| `status` | `DomainTransferStatusEnum` | Transfer status. |
 | `reason` | `string` | Additional transfer status information. |
 | `timestamp` | `string` | Transfer status timestamp in ISO 8601 format. |

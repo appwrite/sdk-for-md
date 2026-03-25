@@ -49,7 +49,9 @@ Returns a `Models.AggregationTeam` object with the following properties:
 | `usageUsers` | `number` | Total active users for the billing period |
 | `usageExecutions` | `number` | Total number of executions for the billing period |
 | `usageBandwidth` | `number` | Total bandwidth usage for the billing period |
-| `usageRealtime` | `number` | Total realtime usage for the billing period |
+| `usageRealtime` | `number` | Peak concurrent realtime connections for the billing period |
+| `usageRealtimeMessages` | `number` | Total realtime messages sent for the billing period |
+| `usageRealtimeBandwidth` | `number` | Total realtime bandwidth usage for the billing period |
 | `additionalMembers` | `number` | Additional members |
 | `additionalMemberAmount` | `number` | Additional members cost |
 | `additionalStorageAmount` | `number` | Additional storage usage cost |

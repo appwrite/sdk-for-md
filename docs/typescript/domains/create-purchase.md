@@ -1,6 +1,6 @@
 # createPurchase
 
-Description: Create a domain purchase with registrant information.
+Description: Initiate a domain purchase by providing registrant details and a payment method. Authorizes the payment and returns a `clientSecret`. If 3D Secure is required, use the `clientSecret` on the client to complete the authentication challenge. Once authentication is complete (or if none is needed), call the Update Purchase endpoint to capture the payment and finalize the purchase.
 
 ## Parameters
 
@@ -27,7 +27,7 @@ const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const domains = new Domains(client);
-const result: Models.Domain = await domains.createPurchase({
+const result: Models.DomainPurchase = await domains.createPurchase({
   domain: '',
   organizationId: '<ORGANIZATION_ID>',
   firstName: '<FIRST_NAME>',
@@ -44,21 +44,17 @@ const result: Models.Domain = await domains.createPurchase({
 
 ## Response Model
 
-Returns a `Models.Domain` object with the following properties:
+Returns a `Models.DomainPurchase` object with the following properties:
 
 | Property | Type | Description |
 |----------|------|-------------|
-| `id` | `string` | Domain ID. |
-| `createdAt` | `string` | Domain creation time in ISO 8601 format. |
-| `updatedAt` | `string` | Domain update date in ISO 8601 format. |
+| `id` | `string` | Purchase/invoice ID. |
+| `createdAt` | `string` | Purchase creation time in ISO 8601 format. |
+| `updatedAt` | `string` | Purchase update date in ISO 8601 format. |
+| `domainId` | `string` | Domain document ID. |
 | `domain` | `string` | Domain name. |
-| `registrar` | `string` | Domain registrar (e.g. &quot;appwrite&quot; or &quot;third_party&quot;). |
-| `paymentStatus` | `string` | Payment status for domain purchase. |
-| `nameservers` | `string` | Nameservers setting. &quot;Appwrite&quot; or empty string. |
-| `expire` | `string` | Domain expiry date in ISO 8601 format. |
-| `renewal` | `string` | Domain renewal date in ISO 8601 format. |
-| `autoRenewal` | `boolean` | If set to true, the domain will automatically renew. |
-| `renewalPrice` | `number` | Renewal price (in cents). |
-| `teamId` | `string` | Team ID. |
-| `dnsRecords` | `object[]` | Dns records |
-| `transferStatus` | `string` | Domain transfer status (e.g., &quot;pending&quot;, &quot;completed&quot;, &quot;failed&quot;). |
+| `organizationId` | `string` | Team ID that owns the domain. |
+| `status` | `DomainPurchaseStatus` | Domain purchase status. |
+| `clientSecret` | `string` | Stripe client secret for 3DS; empty when not applicable. |
+| `amount` | `number` | Purchase amount. |
+| `currency` | `string` | Currency code. |

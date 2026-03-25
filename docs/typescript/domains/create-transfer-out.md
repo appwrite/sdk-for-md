@@ -1,6 +1,6 @@
 # createTransferOut
 
-Description: Create a domain transfer out and return the authorization code.
+Description: Initiate a domain transfer-out by generating an authorization code for the specified domain. The returned `authCode` should be provided to the gaining provider to complete the transfer. If the domain has auto-renewal enabled, it will be automatically disabled as part of this operation.
 
 ## Parameters
 

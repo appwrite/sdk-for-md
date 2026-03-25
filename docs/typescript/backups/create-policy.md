@@ -7,7 +7,7 @@ Description: Create a new backup policy.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `policyId` | `string` | ✅ | Policy ID. Choose a custom ID or generate a random ID with `ID.unique()`. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can&#039;t start with a special char. Max length is 36 chars. |
-| `services` | `BackupServices` | ✅ | Array of services to backup<br>**Allowed:** `databases`, `functions`, `storage` |
+| `services` | `BackupServices` | ✅ | Array of services to backup<br>**Allowed:** `databases`, `tablesdb`, `documentsdb`, `vectorsdb`, `functions`, `storage` |
 | `retention` | `number` | ✅ | Days to keep backups before deletion |
 | `schedule` | `string` | ✅ | Schedule CRON syntax. |
 | `name` | `string` | ❌ | Policy name. Max length: 128 chars. |

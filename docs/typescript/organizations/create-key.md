@@ -8,7 +8,7 @@ Description: Create a new organization API key.
 |-----------|------|----------|-------------|
 | `organizationId` | `string` | ✅ | Organization Unique ID |
 | `name` | `string` | ✅ | Key name. Max length: 128 chars. |
-| `scopes` | `Scopes` | ✅ | Key scopes list. Maximum of 100 scopes are allowed.<br>**Allowed:** `platforms.read`, `platforms.write`, `projects.read`, `projects.write`, `keys.read`, `keys.write`, `devKeys.read`, `devKeys.write`, `webhooks.read`, `webhooks.write`, `domains.read`, `domains.write` |
+| `scopes` | `Scopes` | ✅ | Key scopes list. Maximum of 100 scopes are allowed.<br>**Allowed:** `platforms.read`, `platforms.write`, `projects.read`, `projects.write`, `keys.read`, `keys.write`, `devKeys.read`, `devKeys.write`, `domains.read`, `domains.write` |
 | `expire` | `string` | ❌ | Expiration time in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Use null for unlimited expiration. |
 
 ## Usage

@@ -1,10 +1,13 @@
 # listVariables
 
-Description: Get a list of all project variables. These variables will be accessible in all Appwrite Functions at runtime.
+Description: Get a list of all project environment variables.
 
 ## Parameters
 
-This method does not accept any parameters.
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `queries` | `string[]` | ❌ | Array of query strings generated using the Query class provided by the SDK. [Learn more about queries](https://appwrite.io/docs/queries). Maximum of 100 queries are allowed, each 4096 characters long. You may filter on the following attributes: key, resourceType, resourceId, secret (Default: `[]`) |
+| `total` | `boolean` | ❌ | When set to false, the total count returned will be 0 and will not be calculated. (Default: `1`) |
 
 ## Usage
 
@@ -15,7 +18,10 @@ const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const project = new Project(client);
-const result: Models.VariableList = await project.listVariables();
+const result: Models.VariableList = await project.listVariables({
+  queries: [],
+  total: false,
+});
 ```
 
 ## Response Model

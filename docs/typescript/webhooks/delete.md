@@ -1,4 +1,4 @@
-# deleteWebhook
+# delete
 
 Description: Delete a webhook by its unique ID. Once deleted, the webhook will no longer receive project events.
 
@@ -6,20 +6,18 @@ Description: Delete a webhook by its unique ID. Once deleted, the webhook will n
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `projectId` | `string` | ✅ | Project unique ID. |
-| `webhookId` | `string` | ✅ | Webhook unique ID. |
+| `webhookId` | `string` | ✅ | Webhook ID. |
 
 ## Usage
 
 ```typescript
-import { Client, Projects } from 'appwrite';
+import { Client, Webhooks } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
-const projects = new Projects(client);
-const result = await projects.deleteWebhook({
-  projectId: '<PROJECT_ID>',
+const webhooks = new Webhooks(client);
+const result = await webhooks.delete({
   webhookId: '<WEBHOOK_ID>',
 });
 ```

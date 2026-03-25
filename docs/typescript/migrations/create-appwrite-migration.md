@@ -6,7 +6,7 @@ Description: Migrate data from another Appwrite project to your current project.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `AppwriteMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file`, `function`, `deployment`, `environment-variable`, `site`, `site-deployment`, `site-variable` |
+| `resources` | `AppwriteMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `documentsdb`, `vectorsdb`, `bucket`, `file`, `function`, `deployment`, `environment-variable`, `provider`, `topic`, `subscriber`, `message`, `site`, `site-deployment`, `site-variable` |
 | `endpoint` | `string` | ✅ | Source Appwrite endpoint |
 | `projectId` | `string` | ✅ | Source Project ID |
 | `apiKey` | `string` | ✅ | Source API Key |

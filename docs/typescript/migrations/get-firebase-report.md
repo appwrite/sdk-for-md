@@ -38,5 +38,9 @@ Returns a `Models.MigrationReport` object with the following properties:
 | `bucket` | `number` | Number of buckets to be migrated. |
 | `function` | `number` | Number of functions to be migrated. |
 | `site` | `number` | Number of sites to be migrated. |
+| `provider` | `number` | Number of providers to be migrated. |
+| `topic` | `number` | Number of topics to be migrated. |
+| `subscriber` | `number` | Number of subscribers to be migrated. |
+| `message` | `number` | Number of messages to be migrated. |
 | `size` | `number` | Size of files to be migrated in mb. |
 | `version` | `string` | Version of the Appwrite instance to be migrated. |

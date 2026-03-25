@@ -1,13 +1,13 @@
 # updateVariable
 
-Description: Update project variable by its unique ID. This variable will be accessible in all Appwrite Functions at runtime.
+Description: Update variable by its unique ID.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `variableId` | `string` | ✅ | Variable unique ID. |
-| `key` | `string` | ✅ | Variable key. Max length: 255 chars. |
+| `variableId` | `string` | ✅ | Variable ID. |
+| `key` | `string` | ❌ | Variable key. Max length: 255 chars. |
 | `value` | `string` | ❌ | Variable value. Max length: 8192 chars. |
 | `secret` | `boolean` | ❌ | Secret variables can be updated or deleted, but only projects can read them during build and runtime. |
 

@@ -12,7 +12,7 @@ Attributes can be `key`, `fulltext`, and `unique`.
 | `databaseId` | `string` | ✅ | Database ID. |
 | `collectionId` | `string` | ✅ | Collection ID. You can create a new collection using the Database service [server integration](https://appwrite.io/docs/server/databases#databasesCreateCollection). |
 | `key` | `string` | ✅ | Index Key. |
-| `type` | `IndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
+| `type` | `DatabasesIndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
 | `attributes` | `string[]` | ✅ | Array of attributes to index. Maximum of 100 attributes are allowed, each 32 characters long. |
 | `orders` | `OrderBy` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`)<br>**Allowed:** `asc`, `desc` |
 | `lengths` | `number[]` | ❌ | Length of index. Maximum of 100 (Default: `[]`) |
@@ -20,7 +20,7 @@ Attributes can be `key`, `fulltext`, and `unique`.
 ## Usage
 
 ```typescript
-import { Client, Databases, IndexType, OrderBy, Models } from 'appwrite';
+import { Client, Databases, DatabasesIndexType, OrderBy, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -30,7 +30,7 @@ const result: Models.Index = await databases.createIndex({
   databaseId: '<DATABASE_ID>',
   collectionId: '<COLLECTION_ID>',
   key: '',
-  type: IndexType.Key,
+  type: DatabasesIndexType.Key,
   attributes: [],
   orders: OrderBy.Asc,
   lengths: [],

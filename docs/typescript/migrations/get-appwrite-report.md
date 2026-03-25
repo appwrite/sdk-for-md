@@ -6,7 +6,7 @@ Description: Generate a report of the data in an Appwrite project before migrati
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `AppwriteMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file`, `function`, `deployment`, `environment-variable`, `site`, `site-deployment`, `site-variable` |
+| `resources` | `AppwriteMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `team`, `membership`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `documentsdb`, `vectorsdb`, `bucket`, `file`, `function`, `deployment`, `environment-variable`, `provider`, `topic`, `subscriber`, `message`, `site`, `site-deployment`, `site-variable` |
 | `endpoint` | `string` | ✅ | Source&#039;s Appwrite Endpoint |
 | `projectID` | `string` | ✅ | Source&#039;s Project ID |
 | `key` | `string` | ✅ | Source&#039;s API Key |
@@ -42,5 +42,9 @@ Returns a `Models.MigrationReport` object with the following properties:
 | `bucket` | `number` | Number of buckets to be migrated. |
 | `function` | `number` | Number of functions to be migrated. |
 | `site` | `number` | Number of sites to be migrated. |
+| `provider` | `number` | Number of providers to be migrated. |
+| `topic` | `number` | Number of topics to be migrated. |
+| `subscriber` | `number` | Number of subscribers to be migrated. |
+| `message` | `number` | Number of messages to be migrated. |
 | `size` | `number` | Size of files to be migrated in mb. |
 | `version` | `string` | Version of the Appwrite instance to be migrated. |

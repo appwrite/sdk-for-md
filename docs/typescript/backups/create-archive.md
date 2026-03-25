@@ -6,7 +6,7 @@ Description: Create a new archive asynchronously for a project.
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `services` | `BackupServices` | ✅ | Array of services to backup<br>**Allowed:** `databases`, `functions`, `storage` |
+| `services` | `BackupServices` | ✅ | Array of services to backup<br>**Allowed:** `databases`, `tablesdb`, `documentsdb`, `vectorsdb`, `functions`, `storage` |
 | `resourceId` | `string` | ❌ | Resource ID. When set, only this single resource will be backed up. |
 
 ## Usage

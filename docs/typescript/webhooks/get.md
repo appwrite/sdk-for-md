@@ -1,40 +1,24 @@
-# updateWebhook
+# get
 
-Description: Update a webhook by its unique ID. Use this endpoint to update the URL, events, or status of an existing webhook.
+Description: Get a webhook by its unique ID. This endpoint returns details about a specific webhook configured for a project.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `projectId` | `string` | ✅ | Project unique ID. |
-| `webhookId` | `string` | ✅ | Webhook unique ID. |
-| `name` | `string` | ✅ | Webhook name. Max length: 128 chars. |
-| `events` | `string[]` | ✅ | Events list. Maximum of 100 events are allowed. |
-| `url` | `string` | ✅ | Webhook URL. |
-| `security` | `boolean` | ✅ | Certificate verification, false for disabled or true for enabled. |
-| `enabled` | `boolean` | ❌ | Enable or disable a webhook. (Default: `1`) |
-| `httpUser` | `string` | ❌ | Webhook HTTP user. Max length: 256 chars. |
-| `httpPass` | `string` | ❌ | Webhook HTTP password. Max length: 256 chars. |
+| `webhookId` | `string` | ✅ | Webhook ID. |
 
 ## Usage
 
 ```typescript
-import { Client, Projects, Models } from 'appwrite';
+import { Client, Webhooks, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
-const projects = new Projects(client);
-const result: Models.Webhook = await projects.updateWebhook({
-  projectId: '<PROJECT_ID>',
+const webhooks = new Webhooks(client);
+const result: Models.Webhook = await webhooks.get({
   webhookId: '<WEBHOOK_ID>',
-  name: '<NAME>',
-  events: [],
-  url: '',
-  security: false,
-  enabled: false,
-  httpUser: '<HTTP_USER>',
-  httpPass: '<HTTP_PASS>',
 });
 ```
 

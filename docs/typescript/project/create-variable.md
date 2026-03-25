@@ -1,11 +1,12 @@
 # createVariable
 
-Description: Create a new project variable. This variable will be accessible in all Appwrite Functions at runtime.
+Description: Create a new project environment variable. These variables can be accessed by all functions and sites in the project.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
+| `variableId` | `string` | ✅ | Variable ID. Choose a custom ID or generate a random ID with `ID.unique()`. Valid chars are a-z, A-Z, 0-9, period, hyphen, and underscore. Can&#039;t start with a special char. Max length is 36 chars. |
 | `key` | `string` | ✅ | Variable key. Max length: 255 chars. |
 | `value` | `string` | ✅ | Variable value. Max length: 8192 chars. |
 | `secret` | `boolean` | ❌ | Secret variables can be updated or deleted, but only projects can read them during build and runtime. (Default: `1`) |
@@ -20,6 +21,7 @@ const client = new Client()
 
 const project = new Project(client);
 const result: Models.Variable = await project.createVariable({
+  variableId: '<VARIABLE_ID>',
   key: '<KEY>',
   value: '<VALUE>',
   secret: false,
