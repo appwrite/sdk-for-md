@@ -17,6 +17,7 @@ Description: Initiate a domain purchase by providing registrant details and a pa
 | `addressLine3` | `string` | ❌ | Additional address line for the registrant (line 3). |
 | `companyName` | `string` | ❌ | Company or organization name for the registrant. |
 | `periodYears` | `number` | ❌ | Registration term in years (1-10). (Default: `1`) |
+| `autoRenewal` | `boolean` | ❌ | Whether the domain should renew automatically after purchase. (Default: `1`) |
 
 ## Usage
 
@@ -39,6 +40,7 @@ const result: Models.DomainPurchase = await domains.createPurchase({
   addressLine3: '<ADDRESS_LINE3>',
   companyName: '<COMPANY_NAME>',
   periodYears: 1,
+  autoRenewal: false,
 });
 ```
 

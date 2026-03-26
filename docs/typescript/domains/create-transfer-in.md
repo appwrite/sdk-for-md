@@ -10,6 +10,7 @@ Description: Initiate a domain transfer-in by providing an authorization code, r
 | `organizationId` | `string` | ✅ | Organization ID that this domain will belong to. |
 | `authCode` | `string` | ✅ | Authorization code for the domain transfer. |
 | `paymentMethodId` | `string` | ✅ | Payment method ID to authorize and capture the transfer. |
+| `autoRenewal` | `boolean` | ❌ | Whether the domain should renew automatically after transfer. (Default: `1`) |
 
 ## Usage
 
@@ -25,6 +26,7 @@ const result: Models.DomainPurchase = await domains.createTransferIn({
   organizationId: '<ORGANIZATION_ID>',
   authCode: '<AUTH_CODE>',
   paymentMethodId: '<PAYMENT_METHOD_ID>',
+  autoRenewal: false,
 });
 ```
 
