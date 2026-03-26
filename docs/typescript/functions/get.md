@@ -37,6 +37,7 @@ Returns a `Models.Function` object with the following properties:
 | `live` | `boolean` | Is the function deployed with the latest configuration? This is set to false if you&#039;ve changed an environment variables, entrypoint, commands, or other settings that needs redeploy to be applied. When the value is false, redeploy the function to update it with the latest configuration. |
 | `logging` | `boolean` | When disabled, executions will exclude logs and errors, and will be slightly faster. |
 | `runtime` | `string` | Function execution and build runtime. |
+| `deploymentRetention` | `number` | How many days to keep the non-active deployments before they will be automatically deleted. |
 | `deploymentId` | `string` | Function&#039;s active deployment ID. |
 | `deploymentCreatedAt` | `string` | Active deployment creation date in ISO 8601 format. |
 | `latestDeploymentId` | `string` | Function&#039;s latest deployment ID. |
@@ -55,4 +56,5 @@ Returns a `Models.Function` object with the following properties:
 | `providerBranch` | `string` | VCS (Version Control System) branch name |
 | `providerRootDirectory` | `string` | Path to function in VCS (Version Control System) repository |
 | `providerSilentMode` | `boolean` | Is VCS (Version Control System) connection is in silent mode? When in silence mode, no comments will be posted on the repository pull or merge requests |
-| `specification` | `string` | Machine specification for builds and executions. |
+| `buildSpecification` | `string` | Machine specification for deployment builds. |
+| `runtimeSpecification` | `string` | Machine specification for executions. |

@@ -6,7 +6,7 @@ Description: Generate a detailed report of the data in an NHost project before m
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `Resources` | ✅ | List of resources to migrate.<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
+| `resources` | `NHostMigrationResource` | ✅ | List of resources to migrate.<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `subdomain` | `string` | ✅ | Source&#039;s Subdomain. |
 | `region` | `string` | ✅ | Source&#039;s Region. |
 | `adminSecret` | `string` | ✅ | Source&#039;s Admin Secret. |
@@ -18,14 +18,14 @@ Description: Generate a detailed report of the data in an NHost project before m
 ## Usage
 
 ```typescript
-import { Client, Migrations, Resources, Models } from 'appwrite';
+import { Client, Migrations, NHostMigrationResource, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.MigrationReport = await migrations.getNHostReport({
-  resources: Resources.User,
+  resources: NHostMigrationResource.User,
   subdomain: '<SUBDOMAIN>',
   region: '<REGION>',
   adminSecret: '<ADMIN_SECRET>',
@@ -49,5 +49,10 @@ Returns a `Models.MigrationReport` object with the following properties:
 | `file` | `number` | Number of files to be migrated. |
 | `bucket` | `number` | Number of buckets to be migrated. |
 | `function` | `number` | Number of functions to be migrated. |
+| `site` | `number` | Number of sites to be migrated. |
+| `provider` | `number` | Number of providers to be migrated. |
+| `topic` | `number` | Number of topics to be migrated. |
+| `subscriber` | `number` | Number of subscribers to be migrated. |
+| `message` | `number` | Number of messages to be migrated. |
 | `size` | `number` | Size of files to be migrated in mb. |
 | `version` | `string` | Version of the Appwrite instance to be migrated. |

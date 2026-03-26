@@ -6,7 +6,7 @@ Description: Migrate data from a Supabase project to your Appwrite project. This
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
+| `resources` | `SupabaseMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `index`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `endpoint` | `string` | ✅ | Source&#039;s Supabase Endpoint |
 | `apiKey` | `string` | ✅ | Source&#039;s API Key |
 | `databaseHost` | `string` | ✅ | Source&#039;s Database Host |
@@ -17,14 +17,14 @@ Description: Migrate data from a Supabase project to your Appwrite project. This
 ## Usage
 
 ```typescript
-import { Client, Migrations, Resources, Models } from 'appwrite';
+import { Client, Migrations, SupabaseMigrationResource, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.Migration = await migrations.createSupabaseMigration({
-  resources: Resources.User,
+  resources: SupabaseMigrationResource.User,
   endpoint: 'https://example.com',
   apiKey: '<API_KEY>',
   databaseHost: '<DATABASE_HOST>',

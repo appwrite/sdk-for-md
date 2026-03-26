@@ -91,6 +91,7 @@ Returns a `Models.Project` object with the following properties:
 | `pingCount` | `number` | Number of times the ping was received for this project. |
 | `pingedAt` | `string` | Last ping datetime in ISO 8601 format. |
 | `labels` | `string[]` | Labels for the project. |
+| `status` | `string` | Project status |
 | `authEmailPassword` | `boolean` | Email/Password auth method status |
 | `authUsersAuthMagicURL` | `boolean` | Magic URL auth method status |
 | `authEmailOtp` | `boolean` | Email (OTP) auth method status |
@@ -111,3 +112,7 @@ Returns a `Models.Project` object with the following properties:
 | `serviceStatusForFunctions` | `boolean` | Functions service status |
 | `serviceStatusForGraphql` | `boolean` | GraphQL service status |
 | `serviceStatusForMessaging` | `boolean` | Messaging service status |
+| `region` | `string` | Project region |
+| `billingLimits` | `object` | Billing limits reached |
+| `blocks` | `object[]` | Project blocks information |
+| `consoleAccessedAt` | `string` | Last time the project was accessed via console. Used with plan&#039;s projectInactivityDays to determine if project is paused. |

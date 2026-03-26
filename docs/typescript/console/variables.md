@@ -35,7 +35,18 @@ Returns a `Models.ConsoleVariables` object with the following properties:
 | `aPPVCSENABLED` | `boolean` | Defines if VCS (Version Control System) is enabled. |
 | `aPPDOMAINENABLED` | `boolean` | Defines if main domain is configured. If so, custom domains can be created. |
 | `aPPASSISTANTENABLED` | `boolean` | Defines if AI assistant is enabled. |
-| `aPPDOMAINSITES` | `string` | A domain to use for site URLs. |
+| `aPPDOMAINSITES` | `string` | A comma separated list of domains to use for site URLs. |
 | `aPPDOMAINFUNCTIONS` | `string` | A domain to use for function URLs. |
 | `aPPOPTIONSFORCEHTTPS` | `string` | Defines if HTTPS is enforced for all requests. |
 | `aPPDOMAINSNAMESERVERS` | `string` | Comma-separated list of nameservers. |
+| `aPPDBADAPTER` | `string` | Database adapter in use. |
+| `supportForRelationships` | `boolean` | Whether the database adapter supports relationships. |
+| `supportForOperators` | `boolean` | Whether the database adapter supports operators. |
+| `supportForSpatials` | `boolean` | Whether the database adapter supports spatial attributes. |
+| `supportForSpatialIndexNull` | `boolean` | Whether the database adapter supports spatial indexes on nullable columns. |
+| `supportForFulltextWildcard` | `boolean` | Whether the database adapter supports fulltext wildcard search. |
+| `supportForMultipleFulltextIndexes` | `boolean` | Whether the database adapter supports multiple fulltext indexes per collection. |
+| `supportForAttributeResizing` | `boolean` | Whether the database adapter supports resizing attributes. |
+| `supportForSchemas` | `boolean` | Whether the database adapter supports fixed schemas with row width limits. |
+| `maxIndexLength` | `number` | Maximum index length supported by the database adapter. |
+| `supportForIntegerIds` | `boolean` | Whether the database adapter uses integer sequence IDs. |

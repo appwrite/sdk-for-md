@@ -6,20 +6,20 @@ Description: Migrate data from a Firebase project to your Appwrite project. This
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `resources` | `Resources` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
+| `resources` | `FirebaseMigrationResource` | ✅ | List of resources to migrate<br>**Allowed:** `user`, `database`, `table`, `column`, `row`, `document`, `attribute`, `collection`, `bucket`, `file` |
 | `serviceAccount` | `string` | ✅ | JSON of the Firebase service account credentials |
 
 ## Usage
 
 ```typescript
-import { Client, Migrations, Resources, Models } from 'appwrite';
+import { Client, Migrations, FirebaseMigrationResource, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
 const migrations = new Migrations(client);
 const result: Models.Migration = await migrations.createFirebaseMigration({
-  resources: Resources.User,
+  resources: FirebaseMigrationResource.User,
   serviceAccount: '<SERVICE_ACCOUNT>',
 });
 ```

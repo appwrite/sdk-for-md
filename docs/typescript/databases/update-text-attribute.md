@@ -47,3 +47,4 @@ Returns a `Models.AttributeText` object with the following properties:
 | `createdAt` | `string` | Attribute creation date in ISO 8601 format. |
 | `updatedAt` | `string` | Attribute update date in ISO 8601 format. |
 | `default` | `string` | Default value for attribute when not provided. Cannot be set when attribute is required. |
+| `encrypt` | `boolean` | Defines whether this attribute is encrypted or not. |

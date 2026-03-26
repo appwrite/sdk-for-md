@@ -12,6 +12,7 @@ Description: Create a mediumtext attribute.
 | `required` | `boolean` | ✅ | Is attribute required? |
 | `default` | `string` | ❌ | Default value for attribute when not provided. Cannot be set when attribute is required. |
 | `array` | `boolean` | ❌ | Is attribute an array? |
+| `encrypt` | `boolean` | ❌ | Toggle encryption for the attribute. Encryption enhances security by not storing any plain text values in the database. However, encrypted attributes cannot be queried. |
 
 ## Usage
 
@@ -29,6 +30,7 @@ const result: Models.AttributeMediumtext = await databases.createMediumtextAttri
   required: false,
   default: '<DEFAULT>',
   array: false,
+  encrypt: false,
 });
 ```
 
@@ -47,3 +49,4 @@ Returns a `Models.AttributeMediumtext` object with the following properties:
 | `createdAt` | `string` | Attribute creation date in ISO 8601 format. |
 | `updatedAt` | `string` | Attribute update date in ISO 8601 format. |
 | `default` | `string` | Default value for attribute when not provided. Cannot be set when attribute is required. |
+| `encrypt` | `boolean` | Defines whether this attribute is encrypted or not. |

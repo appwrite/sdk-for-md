@@ -50,3 +50,5 @@ Returns a `Models.Collection` object with the following properties:
 | `documentSecurity` | `boolean` | Whether document-level permissions are enabled. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `attributes` | `any[]` | Collection attributes. |
 | `indexes` | `object[]` | Collection indexes. |
+| `bytesMax` | `number` | Maximum document size in bytes. Returns 0 when no limit applies. |
+| `bytesUsed` | `number` | Currently used document size in bytes based on defined attributes. |

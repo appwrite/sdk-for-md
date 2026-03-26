@@ -36,5 +36,7 @@ Returns a `Models.ProviderRepository` object with the following properties:
 | `provider` | `string` | VCS (Version Control System) provider name. |
 | `private` | `boolean` | Is VCS (Version Control System) repository private? |
 | `defaultBranch` | `string` | VCS (Version Control System) repository&#039;s default branch name. |
+| `providerInstallationId` | `string` | VCS (Version Control System) installation ID. |
+| `authorized` | `boolean` | Is VCS (Version Control System) repository authorized for the installation? |
 | `pushedAt` | `string` | Last commit date in ISO 8601 format. |
 | `variables` | `string[]` | Environment variables found in .env files |

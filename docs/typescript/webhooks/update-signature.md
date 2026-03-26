@@ -1,38 +1,24 @@
-# createWebhook
+# updateSignature
 
-Description: Create a new webhook. Use this endpoint to configure a URL that will receive events from Appwrite when specific events occur.
+Description: Update the webhook signature key. This endpoint can be used to regenerate the signature key used to sign and validate payload deliveries for a specific webhook.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `projectId` | `string` | ✅ | Project unique ID. |
-| `name` | `string` | ✅ | Webhook name. Max length: 128 chars. |
-| `events` | `string[]` | ✅ | Events list. Maximum of 100 events are allowed. |
-| `url` | `string` | ✅ | Webhook URL. |
-| `security` | `boolean` | ✅ | Certificate verification, false for disabled or true for enabled. |
-| `enabled` | `boolean` | ❌ | Enable or disable a webhook. (Default: `1`) |
-| `httpUser` | `string` | ❌ | Webhook HTTP user. Max length: 256 chars. |
-| `httpPass` | `string` | ❌ | Webhook HTTP password. Max length: 256 chars. |
+| `webhookId` | `string` | ✅ | Webhook ID. |
 
 ## Usage
 
 ```typescript
-import { Client, Projects, Models } from 'appwrite';
+import { Client, Webhooks, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
 
-const projects = new Projects(client);
-const result: Models.Webhook = await projects.createWebhook({
-  projectId: '<PROJECT_ID>',
-  name: '<NAME>',
-  events: [],
-  url: '',
-  security: false,
-  enabled: false,
-  httpUser: '<HTTP_USER>',
-  httpPass: '<HTTP_PASS>',
+const webhooks = new Webhooks(client);
+const result: Models.Webhook = await webhooks.updateSignature({
+  webhookId: '<WEBHOOK_ID>',
 });
 ```
 

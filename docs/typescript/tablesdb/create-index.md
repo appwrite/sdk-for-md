@@ -10,7 +10,7 @@ Type can be `key`, `fulltext`, or `unique`.
 | `databaseId` | `string` | ✅ | Database ID. |
 | `tableId` | `string` | ✅ | Table ID. You can create a new table using the Database service [server integration](https://appwrite.io/docs/references/cloud/server-dart/tablesDB#createTable). |
 | `key` | `string` | ✅ | Index Key. |
-| `type` | `IndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
+| `type` | `TablesDBIndexType` | ✅ | Index type.<br>**Allowed:** `key`, `fulltext`, `unique`, `spatial` |
 | `columns` | `string[]` | ✅ | Array of columns to index. Maximum of 100 columns are allowed, each 32 characters long. |
 | `orders` | `OrderBy` | ❌ | Array of index orders. Maximum of 100 orders are allowed. (Default: `[]`)<br>**Allowed:** `asc`, `desc` |
 | `lengths` | `number[]` | ❌ | Length of index. Maximum of 100 (Default: `[]`) |
@@ -18,7 +18,7 @@ Type can be `key`, `fulltext`, or `unique`.
 ## Usage
 
 ```typescript
-import { Client, TablesDB, IndexType, OrderBy, Models } from 'appwrite';
+import { Client, TablesDB, TablesDBIndexType, OrderBy, Models } from 'appwrite';
 
 const client = new Client()
     .setEndpoint('https://<REGION>.cloud.appwrite.io/v1').setProject('<YOUR_PROJECT_ID>');
@@ -28,7 +28,7 @@ const result: Models.ColumnIndex = await tablesDB.createIndex({
   databaseId: '<DATABASE_ID>',
   tableId: '<TABLE_ID>',
   key: '',
-  type: IndexType.Key,
+  type: TablesDBIndexType.Key,
   columns: [],
   orders: OrderBy.Asc,
   lengths: [],

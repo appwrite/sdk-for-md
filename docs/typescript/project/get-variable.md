@@ -1,12 +1,12 @@
 # getVariable
 
-Description: Get a project variable by its unique ID.
+Description: Get a variable by its unique ID.
 
 ## Parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `variableId` | `string` | ✅ | Variable unique ID. |
+| `variableId` | `string` | ✅ | Variable ID. |
 
 ## Usage
 

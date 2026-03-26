@@ -8,10 +8,10 @@ Description: Create a new site code deployment. Use this endpoint to upload a ne
 |-----------|------|----------|-------------|
 | `siteId` | `string` | ✅ | Site ID. |
 | `code` | `File` | ✅ | Gzip file with your code package. When used with the Appwrite CLI, pass the path to your code directory, and the CLI will automatically package your code. Use a path that is within the current directory. |
-| `activate` | `boolean` | ✅ | Automatically activate the deployment when it is finished building. |
 | `installCommand` | `string` | ❌ | Install Commands. |
 | `buildCommand` | `string` | ❌ | Build Commands. |
 | `outputDirectory` | `string` | ❌ | Output Directory. |
+| `activate` | `boolean` | ❌ | Automatically activate the deployment when it is finished building. |
 
 ## Usage
 
@@ -25,10 +25,10 @@ const sites = new Sites(client);
 const result: Models.Deployment = await sites.createDeployment({
   siteId: '<SITE_ID>',
   code: file,
-  activate: false,
   installCommand: '<INSTALL_COMMAND>',
   buildCommand: '<BUILD_COMMAND>',
   outputDirectory: '<OUTPUT_DIRECTORY>',
+  activate: false,
 });
 ```
 

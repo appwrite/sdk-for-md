@@ -9,7 +9,7 @@ Description: Create a boolean attribute.
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `databaseId` | `string` | ✅ | Database ID. |
-| `collectionId` | `string` | ✅ | Collection ID. You can create a new table using the Database service [server integration](https://appwrite.io/docs/server/databases#databasesCreateCollection). |
+| `collectionId` | `string` | ✅ | Collection ID. You can create a new collection using the Database service [server integration](https://appwrite.io/docs/server/databases#databasesCreateCollection). |
 | `key` | `string` | ✅ | Attribute Key. |
 | `required` | `boolean` | ✅ | Is attribute required? |
 | `default` | `boolean` | ❌ | Default value for attribute when not provided. Cannot be set when attribute is required. |

@@ -11,7 +11,7 @@ Description: Create a new storage bucket.
 | `permissions` | `string[]` | ❌ | An array of permission strings. By default, no user is granted with any permissions. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `fileSecurity` | `boolean` | ❌ | Enables configuring permissions for individual file. A user needs one of file or bucket level permissions to access a file. [Learn more about permissions](https://appwrite.io/docs/permissions). |
 | `enabled` | `boolean` | ❌ | Is bucket enabled? When set to &#039;disabled&#039;, users cannot access the files in this bucket but Server SDKs with and API key can still access the bucket. No files are lost when this is toggled. (Default: `1`) |
-| `maximumFileSize` | `number` | ❌ | Maximum file size allowed in bytes. Maximum allowed value is 30MB. (Default: `[]`) |
+| `maximumFileSize` | `number` | ❌ | Maximum file size allowed in bytes. Maximum allowed value is 5GB. (Default: `[]`) |
 | `allowedFileExtensions` | `string[]` | ❌ | Allowed file extensions. Maximum of 100 extensions are allowed, each 64 characters long. (Default: `[]`) |
 | `compression` | `Compression` | ❌ | Compression algorithm chosen for compression. Can be one of none,  [gzip](https://en.wikipedia.org/wiki/Gzip), or [zstd](https://en.wikipedia.org/wiki/Zstd), For file size above 20MB compression is skipped even if it&#039;s enabled (Default: `none`)<br>**Allowed:** `none`, `gzip`, `zstd` |
 | `encryption` | `boolean` | ❌ | Is encryption enabled? For file size above 20MB encryption is skipped even if it&#039;s enabled (Default: `1`) |
